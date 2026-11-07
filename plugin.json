@@ -1,0 +1,55 @@
+{
+  "id": "feiniu",
+  "name": "Feiniu Music",
+  "version": "0.1.0",
+  "minAppVersion": "0.1.20",
+  "main": "index.js",
+  "playback": "stream",
+  "permissions": {
+    "network": ["*"]
+  },
+  "requestHeaders": [
+    {
+      "hosts": ["{setting:server}"],
+      "kinds": ["image", "audio"],
+      "headers": {
+        "cookie": "{storage:cookie}",
+        "x-access-code": "{storage:accessHeader}",
+        "x-access-source": "{storage:accessSource}"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "key": "server",
+      "label": "Server URL",
+      "help": "Your fnOS address, for example http://192.168.1.10:5666 or https://nas.example.com"
+    },
+    {
+      "key": "username",
+      "label": "Username",
+      "help": "A Feiniu Music account with access to the library"
+    },
+    {
+      "key": "password",
+      "label": "Password",
+      "help": "MyGo Music keeps plugin settings on this computer. Use a dedicated account if you can."
+    },
+    {
+      "key": "accessCode",
+      "label": "Access code",
+      "help": "Optional. Only if you turned on the access code for remote access in fnOS."
+    }
+  ],
+  "navigation": [
+    { "title": "Home", "builtin": "home" },
+    { "title": "Songs", "page": "songs", "icon": "note" },
+    { "title": "Albums", "page": "albums", "icon": "album" },
+    { "title": "Artists", "page": "artists", "icon": "artist" },
+    { "title": "Playlists", "page": "playlists", "icon": "playlist" },
+    { "title": "Genres", "page": "genres", "icon": "star" },
+    { "title": "Recently played", "page": "recent", "icon": "calendar" },
+    { "title": "Liked", "builtin": "liked", "icon": "heart" },
+    { "title": "Stations", "builtin": "stations", "icon": "radio" }
+  ]
+}
