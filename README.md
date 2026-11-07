@@ -80,15 +80,20 @@ node --test
 
 测试用 mock 的 `host` 和 `fetch` 覆盖登录、映射、分页、收藏、歌词、转码和 401 处理。
 
-### 接口来源
+## 参考与致谢
 
-飞牛音乐没有公开 API 文档，本插件的 `/music/api/v1/*` 路径和参数来自社区项目的逆向实现：
+飞牛音乐没有公开 API 文档。本插件的 `/music/api/v1/*` 接口、参数和返回结构，是在下面这些开源项目的基础上整理出来的。**本插件没有复制它们的源代码**，只参考了接口事实和实现思路。
 
-- [kuilei0926/FeiNiuMusic](https://github.com/kuilei0926/FeiNiuMusic) — 第三方 Android 客户端
-- [qianlipp/fn-music-bridge](https://github.com/qianlipp/fn-music-bridge) — 音桥，OpenSubsonic / Jellyfin 协议桥
-- [Sanmmz/fnos_music_ext](https://github.com/Sanmmz/fnos_music_ext) — 飞牛音乐在线曲库扩展
+| 项目 | 参考了什么 | 许可证 |
+| --- | --- | --- |
+| [kuilei0926/FeiNiuMusic](https://github.com/kuilei0926/FeiNiuMusic) | 登录流程、曲库 / 搜索 / 歌单 / 收藏 / 歌词 / 漫游接口、音频流与封面的认证方式 | 未声明（基于 [NagoMusic](https://github.com/Keduoli03/NagoMusic)） |
+| [qianlipp/fn-music-bridge](https://github.com/qianlipp/fn-music-bridge) | 路由表，用来交叉核对接口路径和查询参数 | AGPL-3.0 |
+| [egoist/mygo-music](https://github.com/egoist/mygo-music) | 插件 API、`host` 能力、[示例插件](https://github.com/egoist/mygo-music/tree/main/examples/demo-plugin) | AGPL-3.0 |
+| [rocona/mygo-navidrome](https://github.com/rocona/mygo-navidrome) | 自建音乐服务器插件的结构参考：设置、首页、分页、登录失效处理 | 未声明 |
 
-如果飞牛更新后接口有变化，优先对照这几个项目的最新代码。
+如果飞牛更新后接口有变化，优先对照 FeiNiuMusic 和 fn-music-bridge 的最新代码。
+
+> 本插件目前没有引入上述项目的代码。如果以后要复制它们的实现，需要按对应许可证处理；其中 fn-music-bridge 和 MyGo Music 是 AGPL-3.0。
 
 ## 发布
 
